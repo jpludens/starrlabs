@@ -1,0 +1,8 @@
+# Development files
+Notes/
+
+# Pycharm files
+.idea/
+
+# Python compiled files
+*.pyc
