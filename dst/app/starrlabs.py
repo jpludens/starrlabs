@@ -1,4 +1,4 @@
-"""StarR Labs -  Star Realms deck builder and analyzer"""
+"""StarR Labs"""
 
 import flask
 

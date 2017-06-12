@@ -4,5 +4,8 @@ Notes/
 # Pycharm files
 .idea/
 
+# Node modules
+node_modules/
+
 # Python compiled files
 *.pyc
