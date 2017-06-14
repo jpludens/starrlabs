@@ -9,7 +9,8 @@
     ],
     "env": {
        "es6": true,
-       "node": true
+       "node": true,
+       "browser": true
     },
     ecmaFeatures: {
         "arrowFunctions": true,
@@ -182,6 +183,7 @@
         "template-curly-spacing": [2, "never"],
         // React
         "jsx-quotes": [2, "prefer-double"],
+        "react/no-deprecated": 1,
         "react/display-name": 0,
         "react/jsx-boolean-value": 1,
         "react/jsx-no-undef": 2,
@@ -193,7 +195,7 @@
         "react/no-did-update-set-state": 2,
         "react/no-multi-comp": 2,
         "react/no-unknown-property": 2,
-        "react/prop-types": 2,
+        "react/prop-types": 1,
         "react/react-in-jsx-scope": 2,
         "react/self-closing-comp": 2,
         "react/sort-comp": 2

@@ -1,0 +1,63 @@
+$factionColors: (
+    "BLOB": #5E9849,
+    "TRADE_FEDERATION": #46579B,
+    "STAR_EMPIRE": #E3C93F,
+    "MACHINE_CULT": #B8302C,
+    "UNALIGNED": #404040
+);
+
+@mixin faction($faction) {
+    $color: black;
+    @if (map-has-key($factionColors, $faction)) {
+        $color: map-get($factionColors, $faction);
+    }
+    color: darken($color, 20%);
+    background-color: lighten($color, 30%);
+    border-color: $color;
+}
+
+@font-face {
+    font-family: 'HighlandGothicFLF';
+    src: url('../../fonts/HighlandGothicFLF.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.card-tile {
+    width: 240px;
+    height: 32px;
+    padding: 2px;
+    border: 2px solid;
+    border-radius: 5px;
+    font-family: 'HighlandGothicFLF';
+    font-size: 1.2em;
+}
+
+.card-tile span {
+    vertical-align: middle;
+}
+
+.card-tile__blob {
+    @extend .card-tile;
+    @include faction("BLOB")
+}
+
+.card-tile__trade_federation {
+    @extend .card-tile;
+    @include faction("TRADE_FEDERATION");
+}
+
+.card-tile__machine_cult {
+    @extend .card-tile;
+    @include faction("MACHINE_CULT");
+}
+
+.card-tile__star_empire {
+    @extend .card-tile;
+    @include faction("STAR_EMPIRE")
+}
+
+.card-tile__unaligned {
+    @extend .card-tile;
+    @include faction("UNALIGNED")
+}

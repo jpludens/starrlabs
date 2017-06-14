@@ -3,9 +3,10 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    debug: true,
     entry: [
         'react-hot-loader/patch',
-        path.join(__dirname, 'src/app/static/js/index.js')
+        path.join(__dirname, 'src/app/static/js/main.jsx')
     ],
     output: {
         path: path.join(__dirname, '/dst/app/static'),
@@ -23,7 +24,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 enforce: "pre",
                 loader: "eslint-loader",
@@ -34,7 +35,7 @@ module.exports = {
                 },
             },
             {
-                test: /\.js?$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: "babel-loader",
             },
@@ -47,6 +48,10 @@ module.exports = {
                     "sass-loader?sourceMap"
                 ]
             },
+            {
+                test: /\.scss$/,
+                loaders: ["style", "css", "sass"]
+            }
         ]
     }
 };
