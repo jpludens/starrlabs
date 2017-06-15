@@ -9,3 +9,6 @@ node_modules/
 
 # Python compiled files
 *.pyc
+
+# Distributed files
+/dst/
