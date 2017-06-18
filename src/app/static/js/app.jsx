@@ -2,10 +2,10 @@ import React from 'react';
 import CardTile from './presentations/CardTile.jsx';
 
 //////////////////////////////////////////////
-// These need to come from elsewhere...
-import FACTIONS from './enums/factions.js';
-import CARD_TYPES from './enums/cardTypes.js';
+import FACTIONS from '../../../../gen/static/js/faction.js';
+import CARD_TYPES from '../../../../gen/static/js/cardType.js';
 
+// These need to come from elsewhere...
 const card1 = {
   name: 'Missile Bot',
   faction: FACTIONS.MACHINE_CULT,

@@ -2,6 +2,7 @@
   'base/_typography.scss';
 
 @import
+  '../../../../gen/static/sass/abstract/_generated_variables.scss',
   'abstract/_variables.scss',
   'abstract/_functions.scss',
   'abstract/_mixins.scss';

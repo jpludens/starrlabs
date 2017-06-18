@@ -4,8 +4,8 @@ import Icon from './Icon.jsx';
 import CostIcon from './CostIcon.jsx';
 
 // Load the 32px images used by CardTile
-import FACTIONS from '../enums/factions.js';
-import CARD_TYPES from '../enums/cardTypes.js';
+import FACTIONS from '../../../../../gen/static/js/faction.js';
+import CARD_TYPES from '../../../../../gen/static/js/cardType.js';
 
 for (let faction in FACTIONS) {
   if (Object.prototype.hasOwnProperty.call(FACTIONS, faction)) {

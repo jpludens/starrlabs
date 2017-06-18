@@ -5,13 +5,15 @@
   "description": "TBD",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "python ./build/build.py && ./node_modules/.bin/webpack"
+    "postinstall": "python ./build/builder.py && ./node_modules/.bin/webpack"
   },
   "keywords": [],
   "author": "Jay Palm",
   "license": "MIT",
   "dependencies": {
+    "class-names": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
+    "prop-types": "^15.5.10",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-hot-loader": "^3.0.0-beta.7",

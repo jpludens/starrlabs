@@ -5,6 +5,12 @@
     font-family: 'HighlandGothicFLF';
 }
 
+// NICETO generate these
+// {component_name}--{enum_name}__{enum_value} \{
+//     @include {enum_name}(${enum_name}-{enum_value})
+// \}
+// Requires a mixin
+
 .card-tile--faction__blob {
     @include faction($faction-blob)
 }

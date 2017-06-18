@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    debug: true,
     entry: [
         'react-hot-loader/patch',
         path.join(__dirname, 'src/app/static/js/main.jsx')
@@ -11,7 +10,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, '/dst/app/static'),
         filename: "js/[name].js",
-        publicPath: "/dst/app"
+        publicPath: "http://localhost:5000/static/"
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -49,8 +48,20 @@ module.exports = {
                 ]
             },
             {
-                test: /\.scss$/,
-                loaders: ["style", "css", "sass"]
+                test: /\.(png|jpe?g)$/,
+                loader: 'file-loader',
+                query: {
+                    outputPath: "img/",
+                    name: "[name].[ext]"
+                }
+            },
+            {
+                test: /\.ttf$/,
+                loader: 'file-loader',
+                query: {
+                    outputPath: "fonts/",
+                    name: "[name].[ext]"
+                }
             }
         ]
     }

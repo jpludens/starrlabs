@@ -12,8 +12,9 @@ yarn-error.log
 # Python compiled files
 *.pyc
 
-# Distributed files
+# Built directories
 /dst/
+/gen/
 
 # Thumbs
 *Thumbs.db
