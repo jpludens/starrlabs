@@ -1,0 +1,21 @@
+.quanticon {
+    @include quanticon-scaler(2);
+
+    position: relative;
+    height: auto;
+    float: right;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    p {      
+      font-family: 'uDIN1451MittelschriftRegular';
+      color: black;
+      font-weight: bold;
+      z-index: 100;
+      position: absolute;
+    }
+}

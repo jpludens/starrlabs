@@ -1,0 +1,23 @@
+$color-faction-blob: #5E9849;
+$color-faction-trade-federation: #46579B;
+$color-faction-star-empire: #E3C93F;
+$color-faction-machine-cult: #B8302C;
+$color-faction-unaligned: #404040;
+
+$card-tile-scale-width: 120;
+$card-tile-scale-height: 16;
+$card-tile-scale-padding: 1;
+$card-tile-scale-border: 2;
+$card-tile-scale-border-radius: 3;
+$card-tile-scale-font-size: 6/10;
+
+$quanticon-scale-width: 16;
+$quanticon-scale-top: -1 * 7.5;
+$quanticon-scale-left: 5.75;
+
+// TODO Move these declarations into a _generated-variables.scss and have build.py create from the enums/factions.jsx
+$faction-blob: "BLOB";
+$faction-trade-federation: "TRADE_FEDERATION";
+$faction-machine-cult: "MACHINE_CULT";
+$faction-star-empire: "STAR_EMPIRE";
+$faction-unaligned: "UNALIGNED";

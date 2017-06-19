@@ -1,5 +1,5 @@
 import React from 'react';
-import './CardTile.scss';
+import cssify from './../utils/cssify.js';
 import Icon from './Icon.jsx';
 import CostIcon from './CostIcon.jsx';
 
@@ -29,9 +29,9 @@ const CardTile = ({card}) => {
     <CostIcon cost={card.cost} /> :
     <div/>;
   return (
-    <div className={`card-tile__${faction}`}>
-      <Icon category="faction" name={faction} suffix="32"/>
-      <Icon category="cardType" name={cardType} suffix="32"/>
+    <div className={`card-tile card-tile--faction__${cssify(faction)}`}>
+      <Icon category="faction" name={faction} size={32}/>
+      <Icon category="cardType" name={cardType} size={32}/>
       <span>{card.name}</span>
       {cost}
     </div>

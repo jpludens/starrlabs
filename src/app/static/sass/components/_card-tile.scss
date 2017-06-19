@@ -1,0 +1,26 @@
+.card-tile {
+    @include card-tile-scaler(2);
+    vertical-align: middle;
+    border-style: solid;
+    font-family: 'HighlandGothicFLF';
+}
+
+.card-tile--faction__blob {
+    @include faction($faction-blob)
+}
+
+.card-tile--faction__trade-federation {
+    @include faction($faction-trade-federation);
+}
+
+.card-tile--faction__machine-cult {
+    @include faction($faction-machine-cult);
+}
+
+.card-tile--faction__star-empire {
+    @include faction($faction-star-empire)
+}
+
+.card-tile--faction__unaligned {
+    @include faction($faction-unaligned)
+}

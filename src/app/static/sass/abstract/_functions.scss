@@ -1,0 +1,14 @@
+@function get-faction-color($faction) {
+  $faction-color-map: (
+    $faction-blob: $color-faction-blob,
+    $faction-trade-federation: $color-faction-trade-federation,
+    $faction-machine-cult: $color-faction-machine-cult,
+    $faction-star-empire: $color-faction-star-empire,
+    $faction-unaligned: $color-faction-unaligned
+  );
+  $color: black;
+  @if (map-has-key($faction-color-map, $faction)) {
+    $color: map-get($faction-color-map, $faction);
+  }
+  @return $color;
+}

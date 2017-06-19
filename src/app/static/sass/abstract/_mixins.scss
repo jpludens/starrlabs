@@ -1,0 +1,25 @@
+@mixin faction($faction) {
+  $color: get-faction-color($faction);
+
+  color: darken($color, 20%);
+  background-color: lighten($color, 30%);
+  border-color: $color;
+}
+
+@mixin card-tile-scaler($scale) {
+    width: ($scale * $card-tile-scale-width) + px;
+    height: ($scale * $card-tile-scale-height) + px;
+    padding: ($scale * $card-tile-scale-padding) + px;
+    border-size: ($scale * $card-tile-scale-border) + px;
+    border-radius: ($scale * $card-tile-scale-border-radius) + px;
+    font-size: ($scale * $card-tile-scale-font-size) + em;
+}
+
+@mixin quanticon-scaler($scale) {
+  width: ($scale * $quanticon-scale-width) + px;
+
+  p {
+    top: ($scale * $quanticon-scale-top) + px;
+    left: ($scale * $quanticon-scale-left) + px;
+  }
+}

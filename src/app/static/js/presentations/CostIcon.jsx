@@ -1,9 +1,8 @@
 import React from 'react';
-import './CostIcon.scss';
 
 const CostIcon = ({cost}) => {
   return (
-    <div className="cost-icon">
+    <div className="quanticon">
       <img src="static/img/resource_trade_32.png" />
       <p>{cost}</p>
     </div>

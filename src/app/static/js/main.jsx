@@ -10,6 +10,10 @@ import createLogger from 'redux-logger';
 import App from './app.jsx';
 import rootStub from './reducers/roots/rootStub.js';
 
+import './../sass/main.scss';
+// TODO replace react.PropTypes
+// TODO get classNames plugin installed
+// TODO scss generated
 const store = createStore(
   rootStub,
   applyMiddleware(
