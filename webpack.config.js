@@ -8,39 +8,44 @@ module.exports = {
         path.join(__dirname, 'src/app/static/js/index.js')
     ],
     output: {
-        path: path.join(__dirname, '/dst/app/static/js'),
-        filename: "[name].js"
+        path: path.join(__dirname, '/dst/app/static'),
+        filename: "js/[name].js",
+        publicPath: "/dst/app"
     },
     plugins: [
         new HtmlWebpackPlugin({
           template: 'src/app/templates/index.tpl.html',
           inject: 'body',
-          filename: '../../templates/index.html'
+          filename: '../templates/index.html'
         }),
         new webpack.HotModuleReplacementPlugin()
     ],
-    eslint: {
-        configFile: '.eslintrc',
-        failOnWarning: false,
-        failOnError: false
-    },
     module: {
-        preLoaders: [
+        rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: "eslint",
-            }
-        ],
-        loaders: [
+                enforce: "pre",
+                loader: "eslint-loader",
+                options: {
+                        configFile: '.eslintrc',
+                        failOnWarning: false,
+                        failOnError: false
+                },
+            },
             {
                 test: /\.js?$/,
                 exclude: /node_modules/,
-                loader: "babel",
+                loader: "babel-loader",
             },
             {
-                test: /\.json?/,
-                loader: "json",
+                test: /\.scss$/,
+                use: [
+                    "style-loader",
+                    "css-loader?sourceMap",
+                    "resolve-url-loader",
+                    "sass-loader?sourceMap"
+                ]
             },
         ]
     }

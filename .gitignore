@@ -4,8 +4,10 @@ Notes/
 # Pycharm files
 .idea/
 
-# Node modules
+# Packages
 node_modules/
+yarn.lock
+yarn-error.log
 
 # Python compiled files
 *.pyc

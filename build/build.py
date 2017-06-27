@@ -28,4 +28,5 @@ if __name__ == "__main__":
     dst = os.path.join(root, "..", "dst")
     copy_over(src, dst, ignore=lambda d, files: [f for f in files
                                                  if '.js' in f
+                                                 or 'static' in d
                                                  or f == 'index.tpl.html'])
