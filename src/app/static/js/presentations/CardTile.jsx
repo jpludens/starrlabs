@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cssify from './../utils/cssify.js';
 import Icon from './Icon.jsx';
-import CostIcon from './CostIcon.jsx';
+import Quanticon from './Quanticon.jsx';
 
-// Load the 32px images used by CardTile
+// Load images
 import FACTIONS from '../../../../../gen/static/js/faction.js';
 import CARD_TYPES from '../../../../../gen/static/js/cardType.js';
 
@@ -21,20 +21,17 @@ for (let cardType in CARD_TYPES) {
 }
 
 require('../../img/resource_trade_32.png');
+// Done loading images
 
 const CardTile = ({card}) => {
   const faction = card.faction.toLowerCase();
   const cardType = card.cardType.toLowerCase();
-
-  const cost = card.cost ?
-    <CostIcon cost={card.cost} /> :
-    <div/>;
   return (
     <div className={`card-tile card-tile--faction__${cssify(faction)}`}>
       <Icon category="faction" name={faction} size={32}/>
       <Icon category="cardType" name={cardType} size={32}/>
       <span>{card.name}</span>
-      {cost}
+      <Quanticon value={card.cost || 0} category="resource" name="trade" size={32} />
     </div>
   );
 };
