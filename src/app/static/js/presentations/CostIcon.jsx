@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CostIcon = ({cost}) => {
   return (
@@ -10,9 +11,9 @@ const CostIcon = ({cost}) => {
 };
 
 CostIcon.propTypes = {
-  cost: React.PropTypes.number.isRequired,
-  width: React.PropTypes.string,
-  height: React.PropTypes.string
+  cost: PropTypes.number.isRequired,
+  width: PropTypes.string,
+  height: PropTypes.string
 };
 
 export default CostIcon;

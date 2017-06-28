@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Icon = ({category, name, size, width, height}) => {
   width = width || 'auto';
@@ -12,11 +13,11 @@ const Icon = ({category, name, size, width, height}) => {
 };
 
 Icon.propTypes = {
-  category: React.PropTypes.string.isRequired,
-  name: React.PropTypes.string.isRequired,
-  size: React.PropTypes.number.isRequired,
-  width: React.PropTypes.string,
-  height: React.PropTypes.string
+  category: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
+  width: PropTypes.string,
+  height: PropTypes.string
 };
 
 export default Icon;

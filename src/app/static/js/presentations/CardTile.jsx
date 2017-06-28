@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cssify from './../utils/cssify.js';
 import Icon from './Icon.jsx';
 import CostIcon from './CostIcon.jsx';
@@ -39,7 +40,7 @@ const CardTile = ({card}) => {
 };
 
 CardTile.propTypes = {
-  card: React.PropTypes.object.isRequired
+  card: PropTypes.object.isRequired
 };
 
 export default CardTile;
