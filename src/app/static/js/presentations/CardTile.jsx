@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classNames';
 import cssify from './../utils/cssify.js';
 import Icon from './Icon.jsx';
 import Quanticon from './Quanticon.jsx';
@@ -26,8 +27,9 @@ require('../../img/resource_trade_32.png');
 const CardTile = ({card}) => {
   const faction = card.faction.toLowerCase();
   const cardType = card.cardType.toLowerCase();
+  const classes = classNames('card-tile', `card-tile--faction__${cssify(faction)}`);
   return (
-    <div className={`card-tile card-tile--faction__${cssify(faction)}`}>
+    <div className={classes}>
       <Icon category="faction" name={faction} size={32}/>
       <Icon category="cardType" name={cardType} size={32}/>
       <span>{card.name}</span>
