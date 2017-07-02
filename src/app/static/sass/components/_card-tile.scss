@@ -11,22 +11,22 @@
 // \}
 // Requires a mixin
 
-.card-tile--faction__blob {
+.card-tile--faction-blob {
     @include faction($faction-blob)
 }
 
-.card-tile--faction__trade-federation {
+.card-tile--faction-trade-federation {
     @include faction($faction-trade-federation);
 }
 
-.card-tile--faction__machine-cult {
+.card-tile--faction-machine-cult {
     @include faction($faction-machine-cult);
 }
 
-.card-tile--faction__star-empire {
+.card-tile--faction-star-empire {
     @include faction($faction-star-empire)
 }
 
-.card-tile--faction__unaligned {
+.card-tile--faction-unaligned {
     @include faction($faction-unaligned)
 }

@@ -1,9 +1,11 @@
 import React from 'react';
-import CardTile from './presentations/CardTile.jsx';
+import CardList from './presentations/CardList.jsx';
+import SortPanel from './presentations/SortPanel.jsx';
 
 //////////////////////////////////////////////
 import FACTIONS from '../../../../gen/static/js/faction.js';
 import CARD_TYPES from '../../../../gen/static/js/cardType.js';
+import SORT_TYPES from './enums/sortType.js';
 
 // These need to come from elsewhere...
 const card1 = {
@@ -35,25 +37,45 @@ const card5 = {
   cardType: CARD_TYPES.SHIP,
   cost: 7
 };
-console.log('Patrol Mech from app.jsx');
-console.log(card1);
-console.log('Cutter from app.jsx');
-console.log(card2);
-console.log('Viper from app.jsx');
-console.log(card3);
-console.log('Battlecruiser from app.jsx');
-console.log(card4);
-console.log('Mothership from app.jsx');
-console.log(card5);
+
+const cards = [
+  card1,
+  card2,
+  card3,
+  card4,
+  card5
+];
+// console.log('Patrol Mech from app.jsx');
+// console.log(card1);
+// console.log('Cutter from app.jsx');
+// console.log(card2);
+// console.log('Viper from app.jsx');
+// console.log(card3);
+// console.log('Battlecruiser from app.jsx');
+// console.log(card4);
+// console.log('Mothership from app.jsx');
+// console.log(card5);
+const sortCategories = [
+  'Faction',
+  'Card Type',
+  'Cost',
+  'Name'
+];
+const categorySortTypes = new Map();
+categorySortTypes.set('Faction', SORT_TYPES.UNSORTED);
+categorySortTypes.set('Cost', SORT_TYPES.UNSORTED);
+categorySortTypes.set('Card Type', SORT_TYPES.DESCENDING);
+categorySortTypes.set('Name', SORT_TYPES.ASCENDING);
+const categorySortFunctions = new Map();
 //////////////////////////////////////////////
 
 const App = () => (
   <div>
-    <CardTile card={card1}/>
-    <CardTile card={card2}/>
-    <CardTile card={card3}/>
-    <CardTile card={card4}/>
-    <CardTile card={card5}/>
+    <SortPanel
+      categories={sortCategories}
+      categorySortTypes={categorySortTypes}
+      categorySortFunctions={categorySortFunctions} />
+    <CardList cards={cards} />
   </div>
 );
 

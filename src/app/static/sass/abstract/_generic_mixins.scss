@@ -1,0 +1,55 @@
+@mixin css-triangle($direction, $color, $base-length, $leg-length) {
+  margin: auto;
+  width: 0;
+  height: 0;
+
+  // TODO XXX add some elses
+  @if ($direction == "left") {
+   border-top: $base-length solid transparent;
+   border-bottom: $base-length solid transparent;
+   border-right: $leg-length solid $color;
+  }
+  @else if ($direction == "right") {
+   border-top: $base-length solid transparent;
+   border-bottom: $base-length solid transparent;
+   border-left: $leg-length solid $color;
+  }
+  @else if ($direction == "up") {
+    border-left: $base-length solid transparent;
+    border-right: $base-length solid transparent;
+    border-bottom: $leg-length solid $color;
+  }
+  @else if ($direction == "down") {
+    border-left: $base-length solid transparent;
+    border-right: $base-length solid transparent;
+    border-top: $leg-length solid $color;
+  }
+}
+
+@mixin group-interval($orientation, $interval, $position) {
+  @if ($orientation == "vertical") {
+    @if ($position == $group-position-first) {
+      margin-bottom: $interval;
+    }
+    @else if ($position == $group-position-inner) {
+      margin-top: $interval;
+      margin-bottom: $interval;
+    }
+    @else if ($position == $group-position-last) {
+      margin-top: $interval;
+    }
+  }
+
+  @else if ($orientation == "horizontal") {
+    @if ($position == $group-position-first) {
+      margin-right: $interval;
+    }
+    @else if ($position == $group-position-inner) {
+      margin-left: $interval;
+      margin-right: $interval;
+    }
+    @else if ($position == $group-position-last) {
+      margin-left: $interval;
+    }
+  }
+}

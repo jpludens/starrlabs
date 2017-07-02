@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classNames';
+import {block} from 'bemjs';
 import cssify from './../utils/cssify.js';
 import Icon from './Icon.jsx';
 import Quanticon from './Quanticon.jsx';
@@ -25,13 +25,10 @@ require('../../img/resource_trade_32.png');
 // Done loading images
 
 const CardTile = ({card}) => {
-  const faction = card.faction.toLowerCase();
-  const cardType = card.cardType.toLowerCase();
-  const classes = classNames('card-tile', `card-tile--faction__${cssify(faction)}`);
   return (
-    <div className={classes}>
-      <Icon category="faction" name={faction} size={32}/>
-      <Icon category="cardType" name={cardType} size={32}/>
+    <div className={block('card-tile').mod(`faction-${cssify(card.faction)}`)}>
+      <Icon category="faction" name={card.faction.toLowerCase()} size={32}/>
+      <Icon category="cardType" name={card.cardType.toLowerCase()} size={32}/>
       <span>{card.name}</span>
       <Quanticon value={card.cost || 0} category="resource" name="trade" size={32} />
     </div>

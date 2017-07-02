@@ -1,0 +1,60 @@
+.sort-panel-tab {
+  display: flex;
+  border-radius: 7.5px;
+  background-color: lightgrey;
+
+  p {
+    display: inline;
+    vertical-align: middle;
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+  }
+
+  .sort-panel-tab__sort-arrow-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2.5px;
+  }
+
+  .sort-panel-tab__order-arrow-container {
+    display: flex;
+  }
+
+  .sort-panel-tab__arrow--right {
+    @include sort-panel-tab-arrow("right")
+  }
+
+  .sort-panel-tab__arrow--left {
+    @include sort-panel-tab-arrow("left")
+  }
+
+  .sort-panel-tab__arrow--up {
+    @include sort-panel-tab-arrow("up")
+  }
+
+  .sort-panel-tab__arrow--down {
+    @include sort-panel-tab-arrow("down")
+  }
+}
+
+.sort-panel-tab--first {
+  @include sort-panel-tab-group-interval($group-position-first)
+}
+
+.sort-panel-tab--inner {
+  @include sort-panel-tab-group-interval($group-position-inner)
+}
+
+.sort-panel-tab--last {
+  @include sort-panel-tab-group-interval($group-position-last)
+}
+
+.sort-panel-tab--active {
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+.sort-panel-tab--inactive {
+  border: 1px solid black;
+}

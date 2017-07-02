@@ -23,3 +23,14 @@
     left: ($scale * $quanticon-scale-left) + px;
   }
 }
+
+@mixin sort-panel-tab-arrow($direction) {
+  @include css-triangle($direction,
+    $sort-panel-tab-arrow-color,
+    $sort-panel-tab-arrow-size,
+    $sort-panel-tab-arrow-size)
+}
+
+@mixin sort-panel-tab-group-interval($position) {
+  @include group-interval("horizontal", $sort-panel-tab-group-interval-size, $position)
+}

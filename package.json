@@ -11,6 +11,7 @@
   "author": "Jay Palm",
   "license": "MIT",
   "dependencies": {
+    "bemjs": "^0.3.4",
     "classnames": "^2.2.5",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.5.10",

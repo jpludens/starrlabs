@@ -1,0 +1,7 @@
+const SORT_TYPES = {
+  UNSORTED: 'UNSORTED',
+  ASCENDING: 'ASCENDING',
+  DESCENDING: 'DESCENDING'
+};
+
+export default SORT_TYPES;

@@ -14,34 +14,12 @@ sr_enums = {
         'Ship',
         'Base',
         'Outpost'
+    ],
+    # TODO XXX Move this to a different file
+    'group position': [
+        'only',
+        'inner',
+        'first',
+        'last'
     ]
 }
-
-# const FACTION = {
-#   UNALIGNED: 'UNALIGNED',
-#   TRADE_FEDERATION: 'TRADE_FEDERATION',
-#   STAR_EMPIRE: 'STAR_EMPIRE',
-#   MACHINE_CULT: 'MACHINE_CULT',
-#   BLOB: 'BLOB'
-# };
-#
-# export default FACTION;
-
-# category
-# name
-# value
-
-# all caps
-# all lower
-# camel
-# pascal
-
-# spaces to underscores
-# spaces to dashes
-# spaces removed
-
-# $faction-blob: "BLOB";
-# $faction-trade-federation: "TRADE_FEDERATION";
-# $faction-machine-cult: "MACHINE_CULT";
-# $faction-star-empire: "STAR_EMPIRE";
-# $faction-unaligned: "UNALIGNED";
