@@ -21,6 +21,7 @@ class EnumGenerator(object):
         category = 2
         element_name = 3
         element_value = 4
+        suffix = 5
 
     def __init__(self, indent_string='    ', quote_char='"'):
         self.indent_string = indent_string
@@ -52,7 +53,11 @@ class EnumGenerator(object):
             EnumGenerator.TermType.element_value: {
                 TransformType.case: case.Strategy.as_is,
                 TransformType.space: space.Strategy.as_is
-            }            
+            },
+            EnumGenerator.TermType.suffix: {
+                TransformType.case: case.Strategy.as_is,
+                TransformType.space: space.Strategy.as_is
+            }
         }
 
     @classmethod

@@ -1,7 +1,7 @@
 import os
 import build.generators.js
 import build.generators.sass
-from data.sr_enums import sr_enums
+from data.sr_enums import js_enums, sass_enums, ordered_categories
 
 
 def generate(path):
@@ -9,13 +9,14 @@ def generate(path):
 
     print '  Creating js...'
     js_generator = build.generators.js.JsGenerator()
-    for name, values in sr_enums.items():
-        filename = js_generator.generate_file(path, name, values)
+    for name, values in js_enums.items():
+        include_sort_function = name in ordered_categories
+        filename = js_generator.generate_file(path, name, values, include_sort_function)
         print '    Created definition for {} in {}'.format(name, filename)
 
     print '  Creating sass...'
     sass_generator = build.generators.sass.SassGenerator()
-    variables_filepath = sass_generator.generate_variables_file(path, sr_enums)
+    variables_filepath = sass_generator.generate_variables_file(path, sass_enums)
     print '    Created generated variables at {}'.format(variables_filepath)
 
 if __name__ == "__main__":

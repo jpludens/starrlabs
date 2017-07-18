@@ -1,2 +1,5 @@
-const cssify = str => str.toLowerCase().replace('_', '-');
+function cssify(str) {
+  return str.toLowerCase().replace('_', '-');
+}
+
 export default cssify;

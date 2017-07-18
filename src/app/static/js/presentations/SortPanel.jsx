@@ -1,22 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SortPanelTab from './SortPanelTab.jsx';
-import GROUP_POSITIONS from '../../../../../gen/static/js/groupPosition.js';
+import {GROUP_POSITION} from '../../../../../gen/static/js/groupPosition.js';
 
-const SortPanel = ({categories, categorySortTypes, categorySortFunctions}) => {
-  // make webpack happy for now...
-  categorySortFunctions.set('foo', 'bar');
-  // happymaking complete
-
+const SortPanel = ({categories, categorySortTypes}) => {
   const lastIndex = categories.length - 1;
   const getPosition = i => {
     if (i === 0) {
-      return lastIndex ? GROUP_POSITIONS.FIRST : GROUP_POSITIONS.ONLY;
+      return lastIndex ? GROUP_POSITION.FIRST : GROUP_POSITION.ONLY;
     }
     if (i === lastIndex) {
-      return GROUP_POSITIONS.LAST;
+      return GROUP_POSITION.LAST;
     }
-    return GROUP_POSITIONS.INNER;
+    return GROUP_POSITION.INNER;
   };
 
   return (
@@ -35,8 +31,7 @@ const SortPanel = ({categories, categorySortTypes, categorySortFunctions}) => {
 SortPanel.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
   // NICE validate keys/values (no default map in proptypes)
-  categorySortTypes: PropTypes.instanceOf(Map).isRequired,
-  categorySortFunctions: PropTypes.instanceOf(Map).isRequired
+  categorySortTypes: PropTypes.instanceOf(Map).isRequired
 };
 
 export default SortPanel;

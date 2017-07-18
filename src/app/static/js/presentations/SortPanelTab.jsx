@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {block} from 'bemjs';
 import cssify from './../utils/cssify.js';
-import GROUP_POSITIONS from '../../../../../gen/static/js/groupPosition.js';
+import displayify from './../utils/displayify.js';
+import {GROUP_POSITION} from '../../../../../gen/static/js/groupPosition.js';
 import SORT_TYPES from '../enums/sortType.js';
 
 const tabBlock = block('sort-panel-tab');
@@ -20,10 +21,10 @@ directionBySortType.set(SORT_TYPES.ASCENDING, 'up');
 directionBySortType.set(SORT_TYPES.DESCENDING, 'down');
 
 const needsLeftButton = position =>
-  position === GROUP_POSITIONS.INNER || position === GROUP_POSITIONS.LAST;
+  position === GROUP_POSITION.INNER || position === GROUP_POSITION.LAST;
 
 const needsRightButton = position =>
-  position === GROUP_POSITIONS.INNER || position === GROUP_POSITIONS.FIRST;
+  position === GROUP_POSITION.INNER || position === GROUP_POSITION.FIRST;
 
 const SortPanelTab = ({category, sortType, position}) => {
   return (
@@ -36,7 +37,7 @@ const SortPanelTab = ({category, sortType, position}) => {
       }
 
       <div>
-        <p>{category}</p>
+        <p>{displayify(category)}</p>
         {directionBySortType.has(sortType) ?
           <div className={sortArrowElement} >
             <div className={getArrowClass(directionBySortType.get(sortType))} />

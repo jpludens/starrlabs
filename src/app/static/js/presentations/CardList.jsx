@@ -1,26 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CardTile from './CardTile.jsx';
+import {CARD_ATTRIBUTE} from '../../../../../gen/static/js/cardAttribute.js';
 
 // TODO Use card.id as a key after card data is stored externally
-// Sort by faction
-// Sort by cost
-// Sort by type
-// Sort by name
-// Default: Faction -> Cost -> Name
-
-// Sort Panel
-// SortTiles
-// SortTile
-//   Move left/up, move down/right, toggle
-
-// Show single Faction
-// Show single type
+// will allow this component to stay ignorant of card attributes
 const CardList = ({cards}) => {
   return (
     <ul className="card-list">
       {cards.map(card => (
-        <li key={card.name}>
+        <li key={card[CARD_ATTRIBUTE.NAME]}>
           <CardTile card={card} />
         </li>
       ))}
